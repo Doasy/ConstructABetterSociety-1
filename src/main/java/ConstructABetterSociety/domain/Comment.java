@@ -2,11 +2,9 @@ package ConstructABetterSociety.domain;
 
 import com.fasterxml.jackson.annotation.JsonIdentityReference;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 
+@Entity
 public class Comment extends UriEntity<Long> {
 
     @Id

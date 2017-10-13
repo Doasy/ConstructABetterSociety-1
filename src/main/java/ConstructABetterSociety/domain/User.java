@@ -1,7 +1,9 @@
 package ConstructABetterSociety.domain;
 
+import javax.persistence.Entity;
 import javax.persistence.Id;
 
+@Entity
 public class User extends UriEntity<String> {
 
     @Id
