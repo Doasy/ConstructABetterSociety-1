@@ -7,9 +7,10 @@ import javax.persistence.GenerationType;
 
 
 @Entity
-public class Country extends UriEntity<Long>{
+public class Country extends UriEntity<Long> {
+
     @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
     private String name;
