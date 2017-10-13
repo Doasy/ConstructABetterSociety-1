@@ -2,21 +2,11 @@ package ConstructABetterSociety.domain;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.authority.AuthorityUtils;
-import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.crypto.password.PasswordEncoder;
-
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.Transient;
-import java.util.Collection;
 
 @Entity
-public class User extends UriEntity<String> implements UserDetails{
-
-    public static PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+public class User extends UriEntity<String>{
 
     @Id
     private String nickname;
@@ -37,12 +27,6 @@ public class User extends UriEntity<String> implements UserDetails{
     private int Coins;
 
     @Override
-    @Transient
-    public Collection<? extends GrantedAuthority> getAuthorities() {
-        return AuthorityUtils.commaSeparatedStringToAuthorityList("ROLE_USER");
-    }
-
-    @Override
     public String getId() {
         return nickname;
     }
@@ -55,13 +39,8 @@ public class User extends UriEntity<String> implements UserDetails{
         return password;
     }
 
-    @Override
-    public String getUsername() {
-        return getId();
-    }
-
     public void setPassword(String password) {
-        this.password = passwordEncoder.encode(password);
+        this.password = password;
     }
 
     public String getEmail() {
@@ -110,25 +89,5 @@ public class User extends UriEntity<String> implements UserDetails{
 
     public void setCoins(int coins) {
         Coins = coins;
-    }
-
-    @Override
-    public boolean isAccountNonExpired() {
-        return true;
-    }
-
-    @Override
-    public boolean isAccountNonLocked() {
-        return true;
-    }
-
-    @Override
-    public boolean isCredentialsNonExpired() {
-        return true;
-    }
-
-    @Override
-    public boolean isEnabled() {
-        return true;
     }
 }
