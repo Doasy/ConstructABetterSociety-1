@@ -19,7 +19,9 @@ public class Place extends UriEntity<Long> {
 
     private String description;
 
-    private String ubication;
+    private Double latitude;
+
+    private Double longitude;
 
     @Override
     public Long getId() {
@@ -50,11 +52,19 @@ public class Place extends UriEntity<Long> {
         this.description = description;
     }
 
-    public String getUbication() {
-        return ubication;
+    public Double getLatitude() {
+        return latitude;
     }
 
-    public void setUbication(String ubication) {
-        this.ubication = ubication;
+    public void setLatitude(Double latitude) {
+        this.latitude = latitude;
+    }
+
+    public Double getLongitude() {
+        return longitude;
+    }
+
+    public void setLongitude(Double longitude) {
+        this.longitude = longitude;
     }
 }
