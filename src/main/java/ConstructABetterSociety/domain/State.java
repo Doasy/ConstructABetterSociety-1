@@ -1,5 +1,7 @@
 package ConstructABetterSociety.domain;
 
+import com.fasterxml.jackson.annotation.JsonIdentityReference;
+
 import javax.persistence.*;
 
 @Entity
@@ -10,6 +12,7 @@ public class State extends UriEntity<Long> {
     private Long id;
 
     @ManyToOne
+    @JsonIdentityReference(alwaysAsId = true)
     private Country country;
 
     private String name;
