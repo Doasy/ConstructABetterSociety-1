@@ -12,7 +12,7 @@ $(function() {
                     response($.map(data._embedded.places, function (item) {
                         return {
                             label: item.name + ", " + item.city.name,
-                            value: item.name + ", " + item.city.name,
+                            value: item.name + ", " + item.city.name
                         }
                     }));
                 }
