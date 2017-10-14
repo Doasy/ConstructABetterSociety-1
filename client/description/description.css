@@ -46,8 +46,13 @@
 }
 
 .container-user{
-    background-color: white;
+    background-color: transparent;
 }
+
+.container-user h3, p{
+    color: white;
+}
+
 .container-rating{
     position: static;
 }
