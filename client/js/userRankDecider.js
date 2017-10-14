@@ -14,9 +14,9 @@ function rankCalculator(nickname, punctuation) {
             user.rank = ((user.rank*user.numberOfTimesRated) + punctuation) / (user.numberOfTimesRated + 1);
         }
         $.ajax({
-            type: "POST",
+            type: "PUT",
             contentType: "application/json",
-            url: "http://localhost:8080/users/",
+            url: "http://localhost:8080/users/"+user.id,
             data: JSON.stringify(user),
             dataType: "json",
             cache: false,

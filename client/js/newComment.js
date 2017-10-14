@@ -10,7 +10,7 @@ function myFunction() {
 function commentSaveRoutine(){
     $("#send-comment").on("click", function() {
         var comment = document.getElementById("comment-text").value;
-        var placeName = document.getElementById("place-name").value;
+        var placeName = getParameterByName('place').split(', ')[0];
         coinsAccumulator("Isomorfisme", 1);
         saveComment(comment, "Isomorfisme", placeName);
         updatePage(comment, "Isomorfisme");
@@ -22,7 +22,7 @@ function saveComment(comment, nickname, placeName) {
         url: "http://localhost:8080/places/search/findByNameEquals",
         dataType: "json",
         data: {
-            q: placeName
+            name: placeName
         }
     }).then(function (place) {
         $.ajax({
@@ -33,8 +33,8 @@ function saveComment(comment, nickname, placeName) {
             }
         }).then(function (user) {
             commentJObj = {
-                        "place": place,
-                        "user": user,
+                        "place": place.uri,
+                        "user": user.uri,
                         "type": "review",
                         "description": comment
             };
