@@ -10,6 +10,18 @@
     background-size: cover;
 }
 
+.new-place-pic{
+    display: table;
+    width: 90%;
+    height: 400px;
+    color: #fff;
+    background: url(../img/robots3.jpg) no-repeat center center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
 .with-margins{
     margin-top:2%;
     margin-left: 5%;
