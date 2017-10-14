@@ -42,6 +42,7 @@ public class InitController {
         loadStates();
         loadCities();
         loadPlaces();
+        loadComments();
         
         return "";
     }
@@ -109,5 +110,11 @@ public class InitController {
         userRepository.save(m);
         userRepository.save(j);
         userRepository.save(a);
+    }
+
+    private void loadComments() {
+        Comment comment = new Comment(placeRepository.findByNameEquals("UdL"),
+                userRepository.findByEmail("joel@gmail.com"), "review", "Potatoman is here");
+        commentRepository.save(comment);
     }
 }
