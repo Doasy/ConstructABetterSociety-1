@@ -1,7 +1,8 @@
 
 $(document).ready(function() {
     $.ajax({
-        url: "http://localhost:8080/"
+        url: "http://localhost:8080/load-data"
+    }).then(function(data) {
+        console.log(data);
     });
-    console.log("Called the localhost");
 });
