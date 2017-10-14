@@ -78,10 +78,11 @@
     position: relative;
     background: url(../img/seuvella.jpg) no-repeat center center scroll;
     margin: 2% 5% 2% 2%;
-    width: 80%;
+    width: 50%;
     height: 87.5%;
     max-width: 520px;
     max-height: 366px;
+    float: left;
 }
 
 .new-comment {
@@ -99,9 +100,10 @@
 .container-attributes{
     position: relative;
     background: #721c24;
-    margin: 2% 5% 2% 60%;
+    margin: 2% 2% 2% 5%;
     width: 20%;
     height: 20%;
+    float: left;
 }
 
 #details{
@@ -111,7 +113,9 @@
     display: inline-block;
 }
 
-
+.prova{
+    height: 100%;
+}
 
 textarea{
     width: 100%;
