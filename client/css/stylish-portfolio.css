@@ -131,15 +131,18 @@ hr.small {
 }
 
 .sidebar-nav li a {
+    font-family: Arial;
     display: block;
     text-decoration: none;
     color: #999;
 }
 
 .sidebar-nav li li a {
+    font-family: Arial;
     display: block;
     text-decoration: none;
-    color: #999;
+    font-size: 80%;
+    color: #a9a9a9;
 }
 
 .sidebar-nav li a:hover {
