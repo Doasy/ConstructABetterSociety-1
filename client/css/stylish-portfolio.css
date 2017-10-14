@@ -238,7 +238,8 @@ hr.small {
     float: left;
     vertical-align: middle;
     position: relative;
-    margin-left: 30%;
+    margin-left: 20%;
+    overflow: hidden;
 }
 
 
@@ -402,8 +403,7 @@ small {
 }
 
 .profile-button{
-    width: 10%;
-    height: 10%;
-    margin-top: 50%;
-    margin-left: 10%;
+    width: 24px;
+    height: 24px;
+    margin-left: 2%;
 }
