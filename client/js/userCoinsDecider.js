@@ -4,15 +4,14 @@ function coinsAccumulator(nickname, coins){
         url: "http://localhost:8080/users/search/findByNickname",
         dataType: "json",
         data: {
-            name: nickname
+            nickname: nickname
         }
     }).then(function (user) {
-        console.log(user);
         user.coins = user.coins + coins;
         $.ajax({
-            type: "POST",
+            type: "PUT",
             contentType: "application/json",
-            url: "http://localhost:8080/users/",
+            url: "http://localhost:8080/users/"+user.id,
             data: JSON.stringify(user),
             dataType: "json",
             cache: false,

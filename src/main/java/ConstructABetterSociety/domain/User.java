@@ -45,6 +45,8 @@ public class User extends UriEntity<String> {
         return nickname;
     }
 
+    public String getNickname(){return getId();}
+
     public void setNickname(String nickname) {
         this.nickname = nickname;
     }
