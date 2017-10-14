@@ -24,9 +24,10 @@ function extracted(userInput) {
 
 function setComments(commentOutput) {
     commentOutput['_embedded']['comments'].forEach(function (comment) {
-        document.getElementById('container').innerHTML +=
+        document.getElementById('container-js').innerHTML +=
             '<div id="container-comments" class="container-comments">\n' +
-            '<div id="user" class="container-user">\n' +
+            '    <div id="user" class="container-user">\n' +
+            '        <img id = "report" src="../img/report.png" height=2% width=2%>\n'+
             '        <h3 id="user-name">' + comment.user.id + '</h3>\n' +
             '    </div>\n' +
             '    <div id="rating" class="container-rating">\n' +
@@ -43,6 +44,7 @@ function setComments(commentOutput) {
             '                                                                           title="Sucks big time - 1 star"></label>\n' +
             '        </fieldset>\n' +
             '    </div>\n' +
+
             '    <div id="comment">\n' +
             '        <p>' + comment.description + '</p>\n' +
             '    </div>\n' +
