@@ -24,7 +24,7 @@ public class User extends UriEntity<String> {
 
     private long numberOfTimesRated;
 
-    private int Coins;
+    private int coins;
 
     public User() {}
 
@@ -36,7 +36,7 @@ public class User extends UriEntity<String> {
         this.surname = surname;
         this.rate = rate;
         this.numberOfTimesRated = numberOfTimesRated;
-        Coins = coins;
+        this.coins = coins;
     }
 
     @Override
@@ -97,10 +97,10 @@ public class User extends UriEntity<String> {
     }
 
     public int getCoins() {
-        return Coins;
+        return coins;
     }
 
     public void setCoins(int coins) {
-        Coins = coins;
+        this.coins = coins;
     }
 }
