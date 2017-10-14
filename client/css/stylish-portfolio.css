@@ -216,7 +216,7 @@ hr.small {
 
 
 .action-header {
-    float: left;
+    margin: 0;
     vertical-align: middle;
     position: relative;
     display: table;

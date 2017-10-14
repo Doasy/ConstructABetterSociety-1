@@ -1,0 +1,131 @@
+@import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
+
+
+/****** Style Star Rating Widget *****/
+
+.rating {
+    border: none;
+    float: left;
+}
+
+.rating > input { display: none; }
+.rating > label:before {
+    margin: 5px;
+    font-size: 1.25em;
+    font-family: FontAwesome;
+    display: inline-block;
+    content: "\f005";
+}
+
+.rating > .half:before {
+    content: "\f089";
+    position: absolute;
+}
+
+.rating > label {
+    color: #ddd;
+    float: right;
+}
+
+/***** CSS Magic to Highlight Stars on Hover *****/
+
+.rating > input:checked ~ label, /* show gold star when clicked */
+.rating:not(:checked) > label:hover, /* hover current star */
+.rating:not(:checked) > label:hover ~ label { color: #FFD700;  } /* hover previous stars in list */
+
+.rating > input:checked + label:hover, /* hover current star when changing rating */
+.rating > input:checked ~ label:hover,
+.rating > label:hover ~ input:checked ~ label, /* lighten current selection */
+.rating > input:checked ~ label:hover ~ label { color: #FFED85;  }
+
+.container-comments{
+    position: relative;
+    background-color: #beff95;
+    border: 3px #70a754 solid;
+    margin-top:2%;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.container-new-comment{
+    position: relative;
+    background-color: #90cf67;
+    border: 3px #70a754 solid;
+}
+.container-user{
+    background-color: transparent;
+}
+
+.container-user h3, p{
+    color: #3a6432;
+}
+
+.container-rating{
+    position: static;
+}
+
+.container-description{
+    position: relative;
+    background-color: #90cf67;
+    border: 3px #70a754 solid;
+    margin-top:2%;
+    margin-left: 5%;
+    margin-right: 5%;
+    height: 50%;
+}
+
+.container-image {
+    position: relative;
+    background: url(../img/seuvella.jpg) no-repeat center center scroll;
+    margin: 2% 5% 2% 2%;
+    width: 40%;
+    height: 87.5%;
+    max-width: 520px;
+    max-height: 366px;
+    float: left;
+}
+
+.new-comment {
+    display: table;
+    width: 90%;
+    height: 200px;
+    color: #fff;
+    background: url(../img/one_robot.jpeg) no-repeat center center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.container-attributes{
+    position: relative;
+    margin: 2% 2% 2% 5%;
+    width: 40%;
+    height: 87.5%;
+    float: left;
+}
+
+#details{
+    width: 100%;
+}
+#details .container-image, #details .container-attributes{
+    display: inline-block;
+}
+
+.prova{
+    height: 100%;
+}
+
+textarea{
+    width: 100%;
+}
+
+.with-margins{
+    margin-top:2%;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+h2{
+    color: #0b2e13;
+}
