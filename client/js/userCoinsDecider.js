@@ -1,18 +1,14 @@
 
-function rankCalculator(nickname, punctuation) {
+function coinsAccumulator(nickname, coins){
     $.ajax({
         url: "http://localhost:8080/users/search/findByNickname",
         dataType: "json",
         data: {
             name: nickname
         }
-    }).then(function(user) {
+    }).then(function (user) {
         console.log(user);
-        if(user.numberOfTimesRated === 0){
-            user.rank = punctuation;
-        }else{
-            user.rank = ((user.rank*user.numberOfTimesRated) + punctuation) / (user.numberOfTimesRated + 1);
-        }
+        user.coins = user.coins + coins;
         $.ajax({
             type: "POST",
             contentType: "application/json",
@@ -22,7 +18,7 @@ function rankCalculator(nickname, punctuation) {
             cache: false,
             timeout: 600000,
             success: function () {
-                console.log("user ranking actu");
+                console.log("user coins actu");
             }
         });
     });
