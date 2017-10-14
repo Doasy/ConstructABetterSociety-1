@@ -16,11 +16,11 @@ function extracted(userInput) {
                 place: placeOutput.name
             }
         }).then(function (commentOutput) {
-            console.log(commentOutput);
-            if (!$.trim(commentOutput)){
-                document.getElementById("show-comments").disabled = true;             }
-            else{
-                setComments(commentOutput);
+            if (commentOutput._embedded.comments.length === 0) {
+                document.getElementById("show-comments").disabled = true;
+            }else{
+                console.log("Hei");
+                return commentOutput;
             }
         });
     });
@@ -64,4 +64,9 @@ function getParameterByName(name, url) {
     return decodeURIComponent(results[2].replace(/\+/g, " "));
 }
 
-extracted(getParameterByName('place'));
+commentOut = extracted(getParameterByName('place'));
+console.log(commentOut);
+$("#show-comments").on("click", function() {
+    //coinsAccumulator("Isomorfisme", -1);
+    setComments(commentOut);
+});

@@ -93,38 +93,38 @@ public class InitController {
                 41.3893812,2.1160464);
 
         Place park = new Place(cityRepository.findByNameEquals("Barcelona"),
-                "Car park MNAC",
+                "Car-park-MNAC",
                 "Car park",
                 41.368086, 2.151714);
 
         Place zoo = new Place(cityRepository.findByNameEquals("Barcelona"),
-                "BCN Zoo",
+                "BCN-Zoo",
                 "Have fun with animals.",
                 41.386333, 2.189858);
 
         Place po = new Place(cityRepository.findByNameEquals("Barcelona"),
-                "Port Olimpic",
+                "Port-Olimpic",
                 "Olimpic port.",
                 41.386333, 2.189858);
 
         Place cp = new Place(cityRepository.findByNameEquals("Barcelona"),
-                "Parlament de Catalunya",
+                "Parlament-de-Catalunya",
                 "Where Puigdemont talks about Catalonia.",
                 41.388130, 2.188983);
 
 
         Place sf = new Place(cityRepository.findByNameEquals("Barcelona"),
-                "Sagrada Familia",
+                "Sagrada-Familia",
                 "Amazing.",
                 41.403630, 2.174356);
 
         Place hp = new Place(cityRepository.findByNameEquals("Barcelona"),
-                "Hospital Plato",
+                "Hospital-Plato",
                 "Where nurses and a doctor have fun.",
                 41.401326, 2.141991);
 
         Place tw = new Place(cityRepository.findByNameEquals("Barcelona"),
-                "ThoughtWorks Barcelona",
+                "ThoughtWorks-Barcelona",
                 "Best company.",
                 41.402521,2.1921443);
 
@@ -143,9 +143,6 @@ public class InitController {
         placeRepository.save(park);
         placeRepository.save(mareNostrum);
         placeRepository.save(mareNostrum);
-
-
-
     }
 
     private void loadUsers() {
@@ -159,7 +156,7 @@ public class InitController {
                 "1234",
                 "joel@gmail.com",
                 "Joel", "Surname",
-                0, 0, 10);
+                0, 0, 100);
 
         User a = new User("AlbaUser",
                 "1234",
@@ -182,6 +179,12 @@ public class InitController {
     private void loadComments() {
         Comment comment = new Comment(placeRepository.findByNameEquals("UdL"),
                 userRepository.findByEmail("joel@gmail.com"), "review", "Potatoman is here");
+
+        Comment comment1 = new Comment(placeRepository.findByNameEquals("ThoughtWorks-Barcelona"),
+                userRepository.findByEmail("joel@gmail.com"), "review", "Potatoman is here");
+
         commentRepository.save(comment);
+        commentRepository.save(comment1);
+
     }
 }
