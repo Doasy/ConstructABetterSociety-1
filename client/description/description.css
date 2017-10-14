@@ -47,6 +47,11 @@
     margin-right: 5%;
 }
 
+.container-new-comment{
+    position: relative;
+    background-color: #90cf67;
+    border: 3px #70a754 solid;
+}
 .container-user{
     background-color: transparent;
 }
@@ -69,19 +74,26 @@
     height: 50%;
 }
 
-.container-image{
+.container-image {
     position: relative;
     background: url(../img/seuvella.jpg) no-repeat center center scroll;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
     margin: 2% 5% 2% 2%;
     width: 80%;
     height: 87.5%;
     max-width: 520px;
     max-height: 366px;
+}
 
+.new-comment {
+    display: table;
+    width: 90%;
+    height: 200px;
+    color: #fff;
+    background: url(../img/one_robot.jpeg) no-repeat center center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
 .container-attributes{
@@ -97,4 +109,20 @@
 }
 #details .container-image, #details .container-attributes{
     display: inline-block;
+}
+
+
+
+textarea{
+    width: 100%;
+}
+
+.with-margins{
+    margin-top:2%;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+h2{
+    color: #0b2e13;
 }
