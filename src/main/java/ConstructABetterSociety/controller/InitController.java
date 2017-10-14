@@ -5,6 +5,7 @@ import ConstructABetterSociety.repository.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -29,15 +30,20 @@ public class InitController {
     PlaceRepository placeRepository;
 
 
+    @CrossOrigin
     @RequestMapping("/load-data")
     public @ResponseBody
     String loadData(Model model) {
+        if(countryRepository.findOne((long)1) != null){
+           return "";
+        }
         loadUsers();
         loadCountries();
         loadStates();
         loadCities();
         loadPlaces();
-        
+        loadComments();
+
         return "";
     }
 
@@ -104,5 +110,11 @@ public class InitController {
         userRepository.save(m);
         userRepository.save(j);
         userRepository.save(a);
+    }
+
+    private void loadComments() {
+        Comment comment = new Comment(placeRepository.findByNameEquals("UdL"),
+                userRepository.findByEmail("joel@gmail.com"), "review", "Potatoman is here");
+        commentRepository.save(comment);
     }
 }

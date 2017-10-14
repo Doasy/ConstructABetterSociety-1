@@ -21,9 +21,11 @@ public class Comment extends UriEntity<Long> {
 
     private String type;
 
+    private String description;
+
     public Comment() {}
 
-    public Comment(Place place, User user, String type) {
+    public Comment(Place place, User user, String type, String description) {
         this.place = place;
         this.user = user;
         this.type = type;
@@ -56,5 +58,13 @@ public class Comment extends UriEntity<Long> {
 
     public void setType(String type) {
         this.type = type;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 }

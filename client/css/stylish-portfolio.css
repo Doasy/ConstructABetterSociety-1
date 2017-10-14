@@ -4,7 +4,6 @@
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
  */
 
-
 /* Global Styles */
 
 html,
@@ -42,7 +41,6 @@ body {
 }
 
 
-
 .text-vertical-center h1 {
     font-size: 4.5em;
     font-weight: 700;
@@ -50,6 +48,7 @@ body {
     padding: 0;
     color: #3a6432;
 }
+
 
 .text-vertical-center h3 {
     color: #7fbe47;
@@ -85,13 +84,11 @@ body {
     background-color: rgba(255, 255, 255, .8);
 }
 
-
 /* Custom Horizontal Rule */
 
 hr.small {
     max-width: 100px;
 }
-
 
 /* Side Menu */
 
@@ -203,7 +200,6 @@ hr.small {
     padding: 15px 20px;
 }
 
-
 /* Header */
 
 .header {
@@ -217,6 +213,7 @@ hr.small {
     -o-background-size: cover;
     background-size: cover;
 }
+
 
 .action-header {
     float: left;
@@ -250,7 +247,6 @@ hr.small {
 }
 
 
-/*  */
 
 .actions {
     padding: 50px 0;
@@ -291,7 +287,6 @@ hr.small {
     background-size: cover;
 }
 
-
 /* Portfolio */
 
 .portfolio {
@@ -310,7 +305,6 @@ hr.small {
     opacity: .8;
 }
 
-
 /* Call to Action */
 
 .call-to-action {
@@ -321,14 +315,13 @@ hr.small {
     margin: 10px;
 }
 
-
 /* Map */
 
 .map {
     height: 500px;
 }
 
-@media(max-width:768px) {
+@media (max-width: 768px) {
     .map {
         height: 75%;
     }
@@ -337,7 +330,6 @@ hr.small {
 .map iframe {
     pointer-events: none;
 }
-
 
 /* Footer */
 
@@ -353,7 +345,8 @@ footer {
     display: none;
     padding: 15px 20px;
 }
-.little-button-text{
+
+.little-button-text {
     margin: 0;
 }
 
