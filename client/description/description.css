@@ -40,7 +40,7 @@
 
 .container-comments{
     position: relative;
-    background-color: #90cf67;
+    background-color: #beff95;
     border: 3px #70a754 solid;
     margin-top:2%;
     margin-left: 5%;
@@ -57,7 +57,7 @@
 }
 
 .container-user h3, p{
-    color: white;
+    color: #3a6432;
 }
 
 .container-rating{
