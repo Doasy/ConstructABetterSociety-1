@@ -2,6 +2,7 @@ package ConstructABetterSociety.repository;
 
 import ConstructABetterSociety.domain.City;
 import ConstructABetterSociety.domain.Place;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.data.repository.query.Param;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
@@ -16,8 +17,8 @@ interface CityInlinePlacesProjection {
     String getName();
     String getDescription();
     City getCity();
-    Long getLatitude();
-    Long getLongitude();
+    Double getLatitude();
+    Double getLongitude();
 }
 
 
@@ -25,5 +26,7 @@ interface CityInlinePlacesProjection {
 @RepositoryRestResource(excerptProjection = CityInlinePlacesProjection.class)
 public interface PlaceRepository extends PagingAndSortingRepository<Place, Long> {
     List<Place>findByNameContains(@Param("q") String q);
+    @Query("SELECT p FROM Place p WHERE p.city.name = :name")
+    List<Place>findByCity(@Param("name")String name);
     Place findByNameEquals(@Param("name") String name);
 }
