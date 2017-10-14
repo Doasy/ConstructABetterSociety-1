@@ -15,6 +15,12 @@ public class Country extends UriEntity<Long> {
 
     private String name;
 
+    public Country() {}
+
+    public Country(String name) {
+        this.name = name;
+    }
+
     @Override
     public Long getId() {
         return id;

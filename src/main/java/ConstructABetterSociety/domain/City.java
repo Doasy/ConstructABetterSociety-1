@@ -17,6 +17,13 @@ public class City extends UriEntity<Long> {
 
     private String name;
 
+    public City() {}
+
+    public City(State state, String name) {
+        this.state = state;
+        this.name = name;
+    }
+
     @Override
     public Long getId() {
         return id;
