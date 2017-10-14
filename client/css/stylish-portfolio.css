@@ -377,3 +377,10 @@ input[type="submit"]:hover{
     border-radius: 0;
     background-color: rgba(0, 0, 0, 0.76);
 }
+
+.profile-icon{
+    width: 24px;
+    height: 24px;
+    margin-top: 10%;
+    margin-left: 10%;
+}
