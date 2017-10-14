@@ -1,0 +1,31 @@
+.by-place-pic {
+    display: table;
+    width: 90%;
+    height: 400px;
+    color: #fff;
+    background: url(../img/handsrobots.jpeg) no-repeat center center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.with-margins{
+    margin-top:2%;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+select{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.styled-select {
+    width: 240px;
+    height: 34px;
+    overflow: hidden;
+    background: url(../img/down_arrow_select.jpg) no-repeat right #ddd;
+    border: 1px solid #ccc;
+}
