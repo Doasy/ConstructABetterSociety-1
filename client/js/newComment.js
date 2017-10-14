@@ -3,5 +3,79 @@ document.getElementById("new-comment-button").onclick = function() {myFunction()
 function myFunction() {
     document.getElementById("text").innerHTML =
         '<textarea id="comment-text" rows="4"></textarea>' +
-        '<a id="send-comment" href="#" class="btn btn-dark btn-lg js-scroll-trigger">Send</a>'
+        '<a id="send-comment" class="btn btn-dark btn-lg js-scroll-trigger">Send</a>';
+    commentSaveRoutine();
+}
+
+function commentSaveRoutine(){
+    $("#send-comment").on("click", function() {
+        var comment = document.getElementById("comment-text").value;
+        var placeName = document.getElementById("place-name").value;
+        coinsAccumulator("Isomorfisme", 1);
+        saveComment(comment, "Isomorfisme", placeName);
+        updatePage(comment, "Isomorfisme");
+    });
+}
+
+function saveComment(comment, nickname, placeName) {
+    $.ajax({
+        url: "http://localhost:8080/places/search/findByNameEquals",
+        dataType: "json",
+        data: {
+            q: placeName
+        }
+    }).then(function (place) {
+        $.ajax({
+            url: "http://localhost:8080/users/search/findByNickname",
+            dataType: "json",
+            data: {
+                nickname: nickname
+            }
+        }).then(function (user) {
+            commentJObj = {
+                        "place": place,
+                        "user": user,
+                        "type": "review",
+                        "description": comment
+            };
+            $.ajax({
+                type: "POST",
+                contentType: "application/json",
+                url: "http://localhost:8080/comments/",
+                data: JSON.stringify(commentJObj),
+                dataType: "json",
+                cache: false,
+                timeout: 600000,
+                success: function () {
+                    console.log("saved comment");
+                }
+            });
+        });
+    });
+}
+
+function updatePage (comment, nickname){
+    document.getElementById('container').innerHTML +=
+        '<div id="container-comments" class="container-comments">\n' +
+        '<div id="user" class="container-user">\n' +
+        '        <h3 id="user-name">' + nickname + '</h3>\n' +
+        '    </div>\n' +
+        '    <div id="rating" class="container-rating">\n' +
+        '        <fieldset class="rating">\n' +
+        '            <input type="radio" id="star5" name="rating" value="5"/><label class="full" for="star5"\n' +
+        '                                                                           title="Awesome - 5 stars"></label>\n' +
+        '            <input type="radio" id="star4" name="rating" value="4"/><label class="full" for="star4"\n' +
+        '                                                                           title="Pretty good - 4 stars"></label>\n' +
+        '            <input type="radio" id="star3" name="rating" value="3"/><label class="full" for="star3"\n' +
+        '                                                                           title="Meh - 3 stars"></label>\n' +
+        '            <input type="radio" id="star2" name="rating" value="2"/><label class="full" for="star2"\n' +
+        '                                                                           title="Kinda bad - 2 stars"></label>\n' +
+        '            <input type="radio" id="star1" name="rating" value="1"/><label class="full" for="star1"\n' +
+        '                                                                           title="Sucks big time - 1 star"></label>\n' +
+        '        </fieldset>\n' +
+        '    </div>\n' +
+        '    <div id="comment">\n' +
+        '        <p>' + comment + '</p>\n' +
+        '    </div>\n' +
+        '</div>';
 }
