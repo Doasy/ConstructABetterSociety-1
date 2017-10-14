@@ -32,6 +32,9 @@ public class InitController {
     @RequestMapping("/load-data")
     public @ResponseBody
     String loadData(Model model) {
+        if(countryRepository.findOne((long)1) != null){
+           return "";
+        }
         loadUsers();
         loadCountries();
         loadStates();
