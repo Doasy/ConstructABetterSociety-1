@@ -75,10 +75,77 @@ public class InitController {
         Place bar = new Place(cityRepository.findByNameEquals("Lleida"),
                 "Tagliatella",
                 "Italian Restaurant",
-                41.620135, 0.618347);
+                41.620135D, 0.618347D);
+
+        Place gym = new Place(cityRepository.findByNameEquals("Barcelona"),
+                "CrossfitUpc",
+                "Enormous gym of upc",
+                41.384921, 2.115955);
+
+        Place upcNord = new Place(cityRepository.findByNameEquals("Barcelona"),
+                "Tagliatella",
+                "Italian Restaurant",
+                41.3894599,2.1112294);
+
+        Place mareNostrum = new Place(cityRepository.findByNameEquals("Barcelona"),
+                "MareNostrum",
+                "Big hardware",
+                41.3893812,2.1160464);
+
+        Place park = new Place(cityRepository.findByNameEquals("Barcelona"),
+                "Car park MNAC",
+                "Car park",
+                41.368086, 2.151714);
+
+        Place zoo = new Place(cityRepository.findByNameEquals("Barcelona"),
+                "BCN Zoo",
+                "Have fun with animals.",
+                41.386333, 2.189858);
+
+        Place po = new Place(cityRepository.findByNameEquals("Barcelona"),
+                "Port Olimpic",
+                "Olimpic port.",
+                41.386333, 2.189858);
+
+        Place cp = new Place(cityRepository.findByNameEquals("Barcelona"),
+                "Parlament de Catalunya",
+                "Where Puigdemont talks about Catalonia.",
+                41.388130, 2.188983);
+
+
+        Place sf = new Place(cityRepository.findByNameEquals("Barcelona"),
+                "Sagrada Familia",
+                "Amazing.",
+                41.403630, 2.174356);
+
+        Place hp = new Place(cityRepository.findByNameEquals("Barcelona"),
+                "Hospital Plato",
+                "Where nurses and a doctor have fun.",
+                41.401326, 2.141991);
+
+        Place tw = new Place(cityRepository.findByNameEquals("Barcelona"),
+                "ThoughtWorks Barcelona",
+                "Best company.",
+                41.402521,2.1921443);
+
+
+
 
         placeRepository.save(university);
         placeRepository.save(bar);
+        placeRepository.save(gym);
+        placeRepository.save(tw);
+        placeRepository.save(sf);
+        placeRepository.save(hp);
+        placeRepository.save(cp);
+        placeRepository.save(po);
+        placeRepository.save(zoo);
+        placeRepository.save(park);
+        placeRepository.save(mareNostrum);
+        placeRepository.save(mareNostrum);
+
+
+
     }
 
     private void loadUsers() {
