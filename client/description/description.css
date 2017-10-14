@@ -78,7 +78,7 @@
     position: relative;
     background: url(../img/seuvella.jpg) no-repeat center center scroll;
     margin: 2% 5% 2% 2%;
-    width: 50%;
+    width: 40%;
     height: 87.5%;
     max-width: 520px;
     max-height: 366px;
@@ -99,10 +99,9 @@
 
 .container-attributes{
     position: relative;
-    background: #721c24;
     margin: 2% 2% 2% 5%;
-    width: 20%;
-    height: 20%;
+    width: 40%;
+    height: 87.5%;
     float: left;
 }
 
