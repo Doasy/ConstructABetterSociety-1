@@ -12,7 +12,7 @@ $.ajax({
 }).then(function(placeOutput){
 
     placeOutput._embedded.places.forEach(function (place) {
-        locations.push([place.name, parseFloat(place.latitude) , parseFloat(place.longitude)]);
+        locations.push([place.name, parseFloat(place.latitude) , parseFloat(place.longitude), city]);
     });
 
     var map = new google.maps.Map(document.getElementById('container-comments'), {
@@ -35,8 +35,7 @@ $.ajax({
             return function () {
                 infowindow.setContent(locations[i][0]);
                 infowindow.open(map, marker);
-                document.getElementById("search").value = locations[i][0];
-
+                document.getElementById("search").value = locations[i][0] + ", " + locations[i][3];
             }
         })(marker, i));
     }
