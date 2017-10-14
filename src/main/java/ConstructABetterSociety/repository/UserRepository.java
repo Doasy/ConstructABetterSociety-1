@@ -9,4 +9,5 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 @RepositoryRestResource
 public interface UserRepository extends PagingAndSortingRepository<User, String> {
     User findByEmail(String email);
+    User findByNickname(String nickname);
 }
