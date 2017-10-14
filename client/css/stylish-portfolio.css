@@ -16,6 +16,19 @@ body {
     font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
+.insert-header {
+    width: 100%;
+    height: 12.5%;
+    background-color: lightblue;
+}
+
+.search-submit {
+    height: 50%;
+    width: 35%;
+    background-color: #1b1e21;
+}
+
+/**/
 .center {
     margin: auto;
     width: 50%;
@@ -33,6 +46,12 @@ body {
     font-weight: 700;
     margin: 0;
     padding: 0;
+    color: #3a6432;
+}
+
+
+.text-vertical-center h3 {
+    color: #7fbe47;
 }
 
 /* Custom Button Styles */
@@ -102,11 +121,29 @@ hr.small {
     line-height: 40px;
     text-indent: 20px;
 }
+.sidebar-nav li {
+    line-height: 40px;
+    text-indent: 20px;
+}
+
+.sidebar-nav li li {
+    line-height: 40px;
+    text-indent: 20px;
+}
 
 .sidebar-nav li a {
+    font-family: Arial;
     display: block;
     text-decoration: none;
     color: #999;
+}
+
+.sidebar-nav li li a {
+    font-family: Arial;
+    display: block;
+    text-decoration: none;
+    font-size: 80%;
+    color: #a9a9a9;
 }
 
 .sidebar-nav li a:hover {
@@ -133,6 +170,11 @@ hr.small {
 .sidebar-nav > .sidebar-brand a:hover {
     color: #fff;
     background: none;
+}
+
+.header-title {
+    color: #ffffff;
+    text-decoration: underline;
 }
 
 #menu-toggle {
@@ -172,21 +214,64 @@ hr.small {
     background-size: cover;
 }
 
+
+.action-header {
+    float: left;
+    vertical-align: middle;
+    position: relative;
+    display: table;
+    width: 100%;
+    height: 5%;
+    background-color: #90cf67;
+
+}
+
+.action-bar-left {
+    float: left;
+    vertical-align: middle;
+    position: relative;
+}
+
+.action-bar-right {
+    float: left;
+    vertical-align: middle;
+    position: relative;
+    margin-left: 30%;
+}
+
+
 /* About */
 
 .about {
     padding: 50px 0;
 }
 
-/* Actions */
+
 
 .actions {
     padding: 50px 0;
+    background-color: #90cf67;
+
 }
+
+.action-header-bar{
+    padding: 20px 0;
+    background-color: #90cf67;
+}
+
 
 .action-item {
     margin-bottom: 30px;
 }
+
+.action-title h1{
+    font-size: 1.5em;
+    font-weight: 700;
+    margin: 0;
+    padding: 0;
+    color: white;
+}
+
 
 /* Callout */
 
@@ -267,6 +352,8 @@ footer {
 
 input[type=text] {
     width: 130px;
+    background-color: white;
+    border: 0px solid #c1ff89;
     -webkit-transition: width 0.4s ease-in-out;
     transition: width 0.4s ease-in-out;
 }
@@ -274,4 +361,19 @@ input[type=text] {
 /* When the input field gets focus, change its width to 100% */
 input[type=text]:focus {
     width: 70%;
+
+}
+
+input[type="submit"]{
+    color: #fff;
+    border: none;
+    border-radius: 0;
+    background-color: rgba(48, 48, 48, 0.44);
+}
+
+input[type="submit"]:hover{
+    color: #fff;
+    border: none;
+    border-radius: 0;
+    background-color: rgba(0, 0, 0, 0.76);
 }
