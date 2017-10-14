@@ -27,7 +27,7 @@ function setComments(commentOutput) {
         document.getElementById('container').innerHTML +=
             '<div id="container-comments" class="container-comments">\n' +
             '<div id="user" class="container-user">\n' +
-            '        <h3 id="user-name">User Name</h3>\n' +
+            '        <h3 id="user-name">' + comment.user.id + '</h3>\n' +
             '    </div>\n' +
             '    <div id="rating" class="container-rating">\n' +
             '        <fieldset class="rating">\n' +
