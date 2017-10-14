@@ -21,6 +21,14 @@ public class Comment extends UriEntity<Long> {
 
     private String type;
 
+    public Comment() {}
+
+    public Comment(Place place, User user, String type) {
+        this.place = place;
+        this.user = user;
+        this.type = type;
+    }
+
     @Override
     public Long getId() {
         return id;

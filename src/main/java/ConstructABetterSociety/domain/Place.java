@@ -23,6 +23,16 @@ public class Place extends UriEntity<Long> {
 
     private Double longitude;
 
+    public Place() {}
+
+    public Place(City city, String name, String description, Double latitude, Double longitude) {
+        this.city = city;
+        this.name = name;
+        this.description = description;
+        this.latitude = latitude;
+        this.longitude = longitude;
+    }
+
     @Override
     public Long getId() {
         return id;

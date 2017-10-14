@@ -26,6 +26,19 @@ public class User extends UriEntity<String>{
 
     private int Coins;
 
+    public User() {}
+
+    public User(String nickname, String password, String email, String name, String surname, double rate, long numberOfTimesRated, int coins) {
+        this.nickname = nickname;
+        this.password = password;
+        this.email = email;
+        this.name = name;
+        this.surname = surname;
+        this.rate = rate;
+        this.numberOfTimesRated = numberOfTimesRated;
+        Coins = coins;
+    }
+
     @Override
     public String getId() {
         return nickname;
