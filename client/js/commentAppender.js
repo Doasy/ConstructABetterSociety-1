@@ -17,7 +17,11 @@ function extracted(userInput) {
             }
         }).then(function (commentOutput) {
             console.log(commentOutput);
-            setComments(commentOutput);
+            if (!$.trim(commentOutput)){
+                document.getElementById("show-comments").disabled = true;             }
+            else{
+                setComments(commentOutput);
+            }
         });
     });
 }
