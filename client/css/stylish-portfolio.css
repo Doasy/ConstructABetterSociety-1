@@ -120,8 +120,23 @@ hr.small {
     line-height: 40px;
     text-indent: 20px;
 }
+.sidebar-nav li {
+    line-height: 40px;
+    text-indent: 20px;
+}
+
+.sidebar-nav li li {
+    line-height: 40px;
+    text-indent: 20px;
+}
 
 .sidebar-nav li a {
+    display: block;
+    text-decoration: none;
+    color: #999;
+}
+
+.sidebar-nav li li a {
     display: block;
     text-decoration: none;
     color: #999;
