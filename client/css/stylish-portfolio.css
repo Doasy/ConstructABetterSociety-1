@@ -175,6 +175,11 @@ hr.small {
     background: none;
 }
 
+.header-title {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
 #menu-toggle {
     position: fixed;
     z-index: 1;
