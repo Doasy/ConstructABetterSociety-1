@@ -4,7 +4,6 @@
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
  */
 
-
 /* Global Styles */
 
 html,
@@ -34,7 +33,6 @@ body {
     margin: 0;
     padding: 0;
 }
-
 
 /* Custom Button Styles */
 
@@ -66,13 +64,11 @@ body {
     background-color: rgba(255, 255, 255, .8);
 }
 
-
 /* Custom Horizontal Rule */
 
 hr.small {
     max-width: 100px;
 }
-
 
 /* Side Menu */
 
@@ -161,7 +157,6 @@ hr.small {
     padding: 15px 20px;
 }
 
-
 /* Header */
 
 .header {
@@ -176,13 +171,11 @@ hr.small {
     background-size: cover;
 }
 
-
 /* About */
 
 .about {
     padding: 50px 0;
 }
-
 
 /* Actions */
 
@@ -193,7 +186,6 @@ hr.small {
 .action-item {
     margin-bottom: 30px;
 }
-
 
 /* Callout */
 
@@ -208,7 +200,6 @@ hr.small {
     -o-background-size: cover;
     background-size: cover;
 }
-
 
 /* Portfolio */
 
@@ -228,7 +219,6 @@ hr.small {
     opacity: .8;
 }
 
-
 /* Call to Action */
 
 .call-to-action {
@@ -239,14 +229,13 @@ hr.small {
     margin: 10px;
 }
 
-
 /* Map */
 
 .map {
     height: 500px;
 }
 
-@media(max-width:768px) {
+@media (max-width: 768px) {
     .map {
         height: 75%;
     }
@@ -255,7 +244,6 @@ hr.small {
 .map iframe {
     pointer-events: none;
 }
-
 
 /* Footer */
 
@@ -271,7 +259,8 @@ footer {
     display: none;
     padding: 15px 20px;
 }
-.little-button-text{
+
+.little-button-text {
     margin: 0;
 }
 
