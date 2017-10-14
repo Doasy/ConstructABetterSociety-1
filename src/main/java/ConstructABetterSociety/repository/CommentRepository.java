@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import java.util.List;
 
 @CrossOrigin
-@RepositoryRestResource
+@RepositoryRestResource(excerptProjection = UserInlineCommentsProjection.class)
 public interface CommentRepository extends PagingAndSortingRepository<Comment, Long> {
     @Query("SELECT c FROM Comment c WHERE c.place.name = :place")
     List<Comment> findByPlace(@Param("place") String place);
@@ -21,8 +21,8 @@ public interface CommentRepository extends PagingAndSortingRepository<Comment, L
 
 @Projection(name = "inlineAddress", types = { User.class })
 interface UserInlineCommentsProjection{
+    User getUser();
     String getId();
-    String getEmail();
-    String getName();
-    String getSurname();
+    String getType();
+    String getDescription();
 }
