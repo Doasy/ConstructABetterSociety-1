@@ -340,7 +340,7 @@ input[type=text] {
 
 /* When the input field gets focus, change its width to 100% */
 input[type=text]:focus {
-    width: 60%;
+    width: 80%;
 
 }
 
