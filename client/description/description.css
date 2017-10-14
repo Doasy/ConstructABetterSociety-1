@@ -43,11 +43,18 @@
     background-color: #90cf67;
     border: 3px #70a754 solid;
     margin-top:2%;
+    margin-left: 5%;
+    margin-right: 5%;
 }
 
 .container-user{
-    background-color: white;
+    background-color: transparent;
 }
+
+.container-user h3, p{
+    color: white;
+}
+
 .container-rating{
     position: static;
 }
