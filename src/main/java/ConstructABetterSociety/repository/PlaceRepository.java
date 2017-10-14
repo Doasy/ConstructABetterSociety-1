@@ -25,8 +25,10 @@ interface CityInlinePlacesProjection {
 @CrossOrigin
 @RepositoryRestResource(excerptProjection = CityInlinePlacesProjection.class)
 public interface PlaceRepository extends PagingAndSortingRepository<Place, Long> {
-    List<Place>findByNameContains(@Param("q") String q);
+    List<Place> findByNameContains(@Param("q") String q);
+
     @Query("SELECT p FROM Place p WHERE p.city.name = :name")
-    List<Place>findByCity(@Param("name")String name);
+    List<Place> findByCity(@Param("name")String name);
+
     Place findByNameEquals(@Param("name") String name);
 }
