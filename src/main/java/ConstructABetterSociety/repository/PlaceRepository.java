@@ -12,4 +12,5 @@ import java.util.List;
 @RepositoryRestResource
 public interface PlaceRepository extends PagingAndSortingRepository<Place, Long> {
     List<Place>findByNameContains(@Param("q") String q);
+    Place findByNameEquals(@Param("name") String name);
 }
