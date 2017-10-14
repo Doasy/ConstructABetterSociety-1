@@ -25,19 +25,25 @@ $(function() {
     });
 });
 
-$(function(){
-    $("#add-button").onclick({
-        source: function( request, response ) {
-            $.ajax({
-                url: "http://localhost:8080/places",
-                method: "POST",
-                datatype: 'json'
-                data: {
-                    name: document.getElementById('new-place').value,
-                    latitude: document.getElementById('lat').value,
-                    longitude: document.getElementById('lon').value
-                }
-            });
+
+$("#add-button").on("click", function() {
+    var dict = { name: document.getElementById('new-place').value,
+                latitude: document.getElementById('lat').value,
+                longitude: document.getElementById('lon').value,
+                city: '/cities/2'};
+    $.ajax({
+        type: "POST",
+        contentType: "application/json",
+        url: "http://localhost:8080/places",
+        data: JSON.stringify(dict),
+        dataType: "json",
+        cache: false,
+        timeout: 600000,
+        success: function () {
+            console.log("Post Done");
         },
+        error: function () {
+            console.log("Post DEP");
+        }
     });
 });
