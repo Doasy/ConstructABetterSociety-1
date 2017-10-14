@@ -29,7 +29,6 @@ public class Comment extends UriEntity<Long> {
         this.place = place;
         this.user = user;
         this.type = type;
-        this.description = description;
     }
 
     @Override

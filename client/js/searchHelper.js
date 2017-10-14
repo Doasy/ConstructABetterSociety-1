@@ -10,7 +10,16 @@ $('#Submit').on("click", function() {
         data: {
             name: placeCity[0]
         }
-    }).then(function(apiOutput) {
-        console.log(apiOutput);
+    }).then(function(placeOutput) {
+        console.log(placeOutput);
+        $.ajax({
+            url: "http://localhost:8080/comments/search/findByPlace",
+            dataType: "json",
+            data: {
+                place: placeOutput.name
+            }
+        }).then(function (commentOutput) {
+            console.log(commentOutput);
+        });
     });
 });

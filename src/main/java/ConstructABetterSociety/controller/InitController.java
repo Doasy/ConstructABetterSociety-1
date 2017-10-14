@@ -43,7 +43,7 @@ public class InitController {
         loadCities();
         loadPlaces();
         loadComments();
-        
+
         return "";
     }
 
