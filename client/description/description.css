@@ -58,3 +58,43 @@
 .container-rating{
     position: static;
 }
+
+.container-description{
+    position: relative;
+    background-color: #90cf67;
+    border: 3px #70a754 solid;
+    margin-top:2%;
+    margin-left: 5%;
+    margin-right: 5%;
+    height: 50%;
+}
+
+.container-image{
+    position: relative;
+    background: url(../img/seuvella.jpg) no-repeat center center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    margin: 2% 5% 2% 2%;
+    width: 80%;
+    height: 87.5%;
+    max-width: 520px;
+    max-height: 366px;
+
+}
+
+.container-attributes{
+    position: relative;
+    background: #721c24;
+    margin: 2% 5% 2% 60%;
+    width: 20%;
+    height: 20%;
+}
+
+#details{
+    width: 100%;
+}
+#details .container-image, #details .container-attributes{
+    display: inline-block;
+}
