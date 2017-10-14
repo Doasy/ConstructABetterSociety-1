@@ -55,22 +55,22 @@ function saveComment(comment, nickname, placeName) {
 }
 
 function updatePage (comment, nickname){
-    document.getElementById('container').innerHTML +=
+    document.getElementById('container-js').innerHTML +=
         '<div id="container-comments" class="container-comments">\n' +
         '<div id="user" class="container-user">\n' +
         '        <h3 id="user-name">' + nickname + '</h3>\n' +
         '    </div>\n' +
         '    <div id="rating" class="container-rating">\n' +
         '        <fieldset class="rating">\n' +
-        '            <input type="radio" id="star5" name="rating" value="5"/><label class="full" for="star5"\n' +
+        '            <input onclick="rankCalculator(&quot;\'+nickname+\'&quot;, 5);" type="radio" id="star5" name="rating" value="5"/><label class="full" for="star5"\n' +
         '                                                                           title="Awesome - 5 stars"></label>\n' +
-        '            <input type="radio" id="star4" name="rating" value="4"/><label class="full" for="star4"\n' +
+        '            <input onclick="rankCalculator(&quot;\'+nickname+\'&quot;, 4);" type="radio" id="star4" name="rating" value="4"/><label class="full" for="star4"\n' +
         '                                                                           title="Pretty good - 4 stars"></label>\n' +
-        '            <input type="radio" id="star3" name="rating" value="3"/><label class="full" for="star3"\n' +
+        '            <input onclick="rankCalculator(&quot;\'+nickname+\'&quot;, 3);" type="radio" id="star3" name="rating" value="3"/><label class="full" for="star3"\n' +
         '                                                                           title="Meh - 3 stars"></label>\n' +
-        '            <input type="radio" id="star2" name="rating" value="2"/><label class="full" for="star2"\n' +
+        '            <input onclick="rankCalculator(&quot;\'+nickname+\'&quot;, 2);" type="radio" id="star2" name="rating" value="2"/><label class="full" for="star2"\n' +
         '                                                                           title="Kinda bad - 2 stars"></label>\n' +
-        '            <input type="radio" id="star1" name="rating" value="1"/><label class="full" for="star1"\n' +
+        '            <input onclick="rankCalculator(&quot;\'+nickname+\'&quot;, 1);" type="radio" id="star1" name="rating" value="1"/><label class="full" for="star1"\n' +
         '                                                                           title="Sucks big time - 1 star"></label>\n' +
         '        </fieldset>\n' +
         '    </div>\n' +

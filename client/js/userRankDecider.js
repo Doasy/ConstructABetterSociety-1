@@ -4,15 +4,16 @@ function rankCalculator(nickname, punctuation) {
         url: "http://localhost:8080/users/search/findByNickname",
         dataType: "json",
         data: {
-            name: nickname
+            nickname: nickname
         }
     }).then(function(user) {
-        console.log(user);
         if(user.numberOfTimesRated === 0){
-            user.rank = punctuation;
+            user.rate = punctuation;
         }else{
-            user.rank = ((user.rank*user.numberOfTimesRated) + punctuation) / (user.numberOfTimesRated + 1);
+            user.rate = ((user.rate*user.numberOfTimesRated) + punctuation) / (user.numberOfTimesRated + 1);
         }
+        user.numberOfTimesRated++;
+        console.log(user);
         $.ajax({
             type: "PUT",
             contentType: "application/json",
@@ -22,7 +23,7 @@ function rankCalculator(nickname, punctuation) {
             cache: false,
             timeout: 600000,
             success: function () {
-                console.log("user ranking actu");
+                console.log("user rateing actu");
             }
         });
     });

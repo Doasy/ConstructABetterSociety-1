@@ -19,8 +19,7 @@ function extracted(userInput) {
             if (commentOutput._embedded.comments.length === 0) {
                 document.getElementById("show-comments").disabled = true;
             }else{
-                console.log("Hei");
-                return commentOutput;
+                setComments(commentOutput);
             }
         });
     });
@@ -28,23 +27,24 @@ function extracted(userInput) {
 
 function setComments(commentOutput) {
     commentOutput['_embedded']['comments'].forEach(function (comment) {
+        var nickname = getUserNickname(comment);
         document.getElementById('container-js').innerHTML +=
             '<div id="container-comments" class="container-comments">\n' +
             '    <div id="user" class="container-user">\n' +
             '        <img id = "report" src="../img/report.png" height=2% width=2%>\n'+
-            '        <h3 id="user-name">' + comment.user.id + '</h3>\n' +
+            '        <h3 id="user-name">' + nickname + '</h3>\n' +
             '    </div>\n' +
             '    <div id="rating" class="container-rating">\n' +
             '        <fieldset class="rating">\n' +
-            '            <input type="radio" id="star5" name="rating" value="5"/><label class="full" for="star5"\n' +
+            '            <input onclick="rankCalculator(&quot;'+nickname+'&quot;, 5);" type="radio" id="star5" name="rating" value="5"/><label class="full" for="star5"\n' +
             '                                                                           title="Awesome - 5 stars"></label>\n' +
-            '            <input type="radio" id="star4" name="rating" value="4"/><label class="full" for="star4"\n' +
+            '            <input onclick="rankCalculator(&quot;'+nickname+'&quot;, 4);" type="radio" id="star4" name="rating" value="4"/><label class="full" for="star4"\n' +
             '                                                                           title="Pretty good - 4 stars"></label>\n' +
-            '            <input type="radio" id="star3" name="rating" value="3"/><label class="full" for="star3"\n' +
+            '            <input onclick="rankCalculator(&quot;'+nickname+'&quot;, 3);" type="radio" id="star3" name="rating" value="3"/><label class="full" for="star3"\n' +
             '                                                                           title="Meh - 3 stars"></label>\n' +
-            '            <input type="radio" id="star2" name="rating" value="2"/><label class="full" for="star2"\n' +
+            '            <input onclick="rankCalculator(&quot;'+nickname+'&quot;, 2);" type="radio" id="star2" name="rating" value="2"/><label class="full" for="star2"\n' +
             '                                                                           title="Kinda bad - 2 stars"></label>\n' +
-            '            <input type="radio" id="star1" name="rating" value="1"/><label class="full" for="star1"\n' +
+            '            <input onclick="rankCalculator(&quot;'+nickname+'&quot;, 1);" type="radio" id="star1" name="rating" value="1"/><label class="full" for="star1"\n' +
             '                                                                           title="Sucks big time - 1 star"></label>\n' +
             '        </fieldset>\n' +
             '    </div>\n' +
@@ -54,6 +54,10 @@ function setComments(commentOutput) {
             '    </div>\n' +
             '</div>';
     });
+}
+
+function getUserNickname(comment){
+    return typeof comment.user === "string" ? comment["user"].split('/')[2] : comment["user"]["uri"].split('/')[2];
 }
 
 function getParameterByName(name, url) {
@@ -66,9 +70,7 @@ function getParameterByName(name, url) {
     return decodeURIComponent(results[2].replace(/\+/g, " "));
 }
 
-commentOut = extracted(getParameterByName('place'));
-console.log(commentOut);
+extracted(getParameterByName('place'));
 $("#show-comments").on("click", function() {
-    //coinsAccumulator("Isomorfisme", -1);
-    setComments(commentOut);
+    coinsAccumulator("Isomorfisme", -1);
 });
