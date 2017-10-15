@@ -84,12 +84,28 @@
             </br>
             <input id= "lon" type="text" class="with-margins" name="search" placeholder="Longitude"  disabled>
             </br>
-            <a id="add-button" href="#container-find-by-place" class="btn btn-dark btn-lg js-scroll-trigger with-margins">Add place</a>
+            <button id="add-button" href="#container-find-by-place" class="btn btn-dark btn-lg js-scroll-trigger with-margins" data-toggle="modal" data-target="#myModal">Add place</button>
+
 
         </div>
     </aside>
 </div>
-
+<div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">New Location created</h4>
+            </div>
+            <div class="modal-body">
+                <p>You've spent 100 coins!!!</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal" onclick="window.location.reload()">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
 <!-- Footer -->
 <footer>
     <div class="container">

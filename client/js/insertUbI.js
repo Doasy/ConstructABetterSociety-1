@@ -55,6 +55,9 @@ $("#add-button").on("click", function() {
                 latitude: document.getElementById('lat').value,
                 longitude: document.getElementById('lon').value,
                 city: '/cities/2'};
+
+    coinsAccumulator("Isomorfisme", -100);
+    
     $.ajax({
         type: "POST",
         contentType: "application/json",
