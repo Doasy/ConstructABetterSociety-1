@@ -57,7 +57,7 @@ $("#add-button").on("click", function() {
                 city: '/cities/2'};
 
     coinsAccumulator("Isomorfisme", -100);
-    
+
     $.ajax({
         type: "POST",
         contentType: "application/json",
