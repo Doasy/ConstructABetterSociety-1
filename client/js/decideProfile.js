@@ -9,7 +9,7 @@ $.ajax({
     $('#nickname').append(user.id);
     $('#name').append(user.name+" "+user.surname);
     $('#email').append(user.email);
-    $('#rate').append(user.rate);
-    $('#votedTimes').append(user.numberOfTimesRated);
-    $('#coins').append(user.coins);
+    $('#rate').append(user.rate+" medium rating");
+    $('#votedTimes').append(user.numberOfTimesRated+" number of times being rated");
+    $('#coinss').append(user.coins+" coins");
 });
