@@ -11,6 +11,7 @@ $(document).ready(function() {
         $("#city").append(data.city.name);
         $("#description").append(data.description);
         $("#ubication").append("Long:" + data.longitude + " " + "Lat: " + data.latitude);
+        $("#place-image").attr("src", "../img/places/" + data.name + ".jpg");
     });
 });
 
