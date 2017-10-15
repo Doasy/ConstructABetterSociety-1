@@ -75,7 +75,7 @@
     height: 50%;
 }
 
-img{
+img#place-image{
     position: relative;
     margin: 10% 5% 2% 2%;
     width: 100%;

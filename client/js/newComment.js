@@ -3,7 +3,23 @@ document.getElementById("new-comment-button").onclick = function() {myFunction()
 function myFunction() {
     document.getElementById("text").innerHTML =
         '<textarea id="comment-text" rows="4"></textarea>' +
-        '<a id="send-comment" class="btn btn-dark btn-lg js-scroll-trigger">Send</a>';
+        '<a id="send-comment" class="btn btn-dark btn-lg js-scroll-trigger" data-toggle="modal" data-target="#myModal">Send</a>'+
+        '<div class="modal fade" id="myModal" role="dialog">' +
+            '<div class="modal-dialog modal-sm">' +
+                '<div class="modal-content">' +
+                    '<div class="modal-header">' +
+                        '<button type="button" class="close" data-dismiss="modal">&times;</button>' +
+                        '<h4 class="modal-title">Comment done!</h4>' +
+                    '</div>' +
+                    '<div class="modal-body">' +
+                        '<p>You\'ve earned 1 coin!!!</p>' +
+                    '</div>' +
+                    '<div class="modal-footer">' +
+                    '   <button type="button" class="btn btn-default" data-dismiss="modal" onClick="window.location.reload();" >Close</button>' +
+                    '</div>' +
+                '</div>' +
+            '</div>' +
+        '</div>';
     commentSaveRoutine();
 }
 
