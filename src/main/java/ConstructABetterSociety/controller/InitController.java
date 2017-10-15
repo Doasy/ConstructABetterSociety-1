@@ -183,8 +183,36 @@ public class InitController {
         Comment comment1 = new Comment(placeRepository.findByNameEquals("ThoughtWorks-Barcelona"),
                 userRepository.findByEmail("joel@gmail.com"), "review", "Potatoman is here");
 
+        Comment comment2 = new Comment(placeRepository.findByNameEquals("MareNostrum"),
+                userRepository.findByEmail("marc@gmail.com"),
+                "review",
+                "Today, Marenostrum is closed because of maintenance.");
+
+        Comment comment3 = new Comment(placeRepository.findByNameEquals("MareNostrum"),
+                userRepository.findByEmail("marc@gmail.com"),
+                "review",
+                "Car park is almost empty. Nice!");
+
+
+        Comment comment4 = new Comment(placeRepository.findByNameEquals("MareNostrum"),
+                userRepository.findByEmail("alba@gmail.com"),
+                "review", "An elephant has just escaped from his zone!!! :o");
+
+
+        Comment comment5 = new Comment(placeRepository.findByNameEquals("MareNostrum"),
+                userRepository.findByEmail("alba@gmail.com"),
+                "review",
+                "There's a lot of people the exit zone is crowded...");
+
+
+
         commentRepository.save(comment);
         commentRepository.save(comment1);
+        commentRepository.save(comment2);
+        commentRepository.save(comment3);
+        commentRepository.save(comment4);
+        commentRepository.save(comment5);
+
 
     }
 }
