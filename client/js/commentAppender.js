@@ -21,6 +21,7 @@ function extracted(userInput) {
             }else{
                 setComments(commentOutput);
             }
+            document.getElementById("container-js").style.visibility = 'hidden';
         });
     });
 }
@@ -72,5 +73,7 @@ function getParameterByName(name, url) {
 
 extracted(getParameterByName('place'));
 $("#show-comments").on("click", function() {
+    document.getElementById("container-js").style.visibility = 'visible' ;
     coinsAccumulator("Isomorfisme", -1);
+    document.getElementById("show-comments").disabled = true;
 });
