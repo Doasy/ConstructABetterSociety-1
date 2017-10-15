@@ -26,6 +26,30 @@ $(function() {
 });
 
 
+$(function() {
+    $("#city").autocomplete({
+        source: function( request, response ) {
+            $.ajax({
+
+                url: "http://localhost:8080/cities/search/findByNameContains",
+                dataType: 'json',
+                data : {
+                    name: request.term
+                },
+                success: function( data ) {
+                    response($.map(data._embedded.cities, function (item) {
+                        return {
+                            label: item.name,
+                            value: item.id
+                        }
+                    }));
+                }
+            });
+        },
+        minLength: 2
+    });
+});
+
 $("#add-button").on("click", function() {
     var dict = { name: document.getElementById('new-place').value,
                 latitude: document.getElementById('lat').value,
