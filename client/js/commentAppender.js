@@ -16,6 +16,7 @@ function extracted(userInput) {
                 place: placeOutput.name
             }
         }).then(function (commentOutput) {
+            document.getElementById("show-comments").disabled = false;
             if (commentOutput._embedded.comments.length === 0) {
                 document.getElementById("show-comments").disabled = true;
             }else{
