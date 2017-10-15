@@ -47,7 +47,7 @@
                             <a class="js-scroll-trigger" href="insert.html">Insert</a>
                         </li>
                         <li>
-                            <a class="js-scroll-trigger" href="visualize.html">Visualize
+                            <a class="js-scroll-trigger" href="visualize.html">Find
                         </li>
                     </ul>
             </li>
@@ -59,13 +59,10 @@
         <div class="action-header action-header-bar action-title">
             <div class="action-bar-left">
                 <h1>
-                    <a class ="header-title" href="../index.html">Open Society</a>  >> Visualize</a>
+                    <a class ="header-title" href="../index.html">Open Society</a>  >> Find</a>
                 </h1>
             </div>
-            <div class="action-bar-right">
-                <input id= "search" type="text" name="search" placeholder="Search..">
-                <input id="Submit" type="submit" value="Submit">
-            </div>
+
         </div>
     </header>
 
@@ -74,11 +71,14 @@
             <div class="text-vertical-center">
                 <h2>Your neighbors give you the information you need</h2>
                 <select id="filter" class="styled-select">
-                    <option value="Barcelona">Barcelona</option>
-                    <option value="Lleida">Lleida</option>
+
                 </select>
                 </br>
-                <a id="find-button" href="#container-find-by-place" class="btn btn-dark btn-lg js-scroll-trigger with-margins">Find</a>
+                <a id="find-buton" href="#container-find-by-place" class="btn btn-dark btn-lg js-scroll-trigger with-margins">Find</a>
+                <div class="with-margins">
+                    <input id= "search" type="text" name="search" placeholder="Search..">
+                    <input id="Submit" type="submit" value="Submit">
+                </div>
             </div>
         </aside>
     </div>
@@ -112,6 +112,8 @@
         <a id="to-top" href="#top" class="btn btn-dark btn-lg js-scroll-trigger">
             <p class="little-button-text">&#x25B2;</p>
         </a>
+
+
     </footer>
 
     <!-- Bootstrap core JavaScript -->
