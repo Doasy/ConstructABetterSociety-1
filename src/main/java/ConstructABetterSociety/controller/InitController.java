@@ -194,12 +194,12 @@ public class InitController {
                 "Car park is almost empty. Nice!");
 
 
-        Comment comment4 = new Comment(placeRepository.findByNameEquals("MareNostrum"),
+        Comment comment4 = new Comment(placeRepository.findByNameEquals("BCN-Zoo"),
                 userRepository.findByEmail("alba@gmail.com"),
                 "review", "An elephant has just escaped from his zone!!! :o");
 
 
-        Comment comment5 = new Comment(placeRepository.findByNameEquals("MareNostrum"),
+        Comment comment5 = new Comment(placeRepository.findByNameEquals("BCN-Zoo"),
                 userRepository.findByEmail("alba@gmail.com"),
                 "review",
                 "There's a lot of people the exit zone is crowded...");
