@@ -1,7 +1,15 @@
-locations = []
-
+$(document).ready(function() {
+    $.ajax({
+        url: "http://localhost:8080/cities"
+    }).then(function (data) {
+        data._embedded.cities.forEach(function (t) {
+            $("#filter").append("<option value=" + t.name + ">" + t.name + "</option>")
+        })
+    });
+});
 
 function filterByCity(city) {
+    locations = [];
     $.ajax({
         url: "http://localhost:8080/places/search/findByCity",
         data: {
@@ -43,6 +51,10 @@ function filterByCity(city) {
 
 
 filterByCity("Barcelona");
+
+$('#find-button').on('click', function() {
+    filterByCity($( "#filter option:selected" ).text());
+});
 
 
 
