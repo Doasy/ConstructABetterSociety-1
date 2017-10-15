@@ -3,7 +3,8 @@ document.getElementById("new-comment-button").onclick = function() {myFunction()
 function myFunction() {
     document.getElementById("text").innerHTML =
         '<textarea id="comment-text" rows="4"></textarea>' +
-        '<a id="send-comment" class="btn btn-dark btn-lg js-scroll-trigger" data-toggle="modal" data-target="#myModal">Send</a>'+
+        '<a id="send-comment" class="btn btn-dark btn-lg js-scroll-trigger" data-toggle="modal" data-target="#myModal" style="margin-bottom: 0%" >Send</a>'+
+        '<p style="color : green;">+1 coin</p>' +
         '<div class="modal fade" id="myModal" role="dialog">' +
             '<div class="modal-dialog modal-sm">' +
                 '<div class="modal-content">' +
