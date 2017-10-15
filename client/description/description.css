@@ -75,16 +75,25 @@
     height: 50%;
 }
 
-.container-image {
+img{
     position: relative;
-    background: url(../img/seuvella.jpg) no-repeat center center scroll;
     margin: 2% 5% 2% 2%;
-    width: 40%;
+    width: 60%;
     height: 87.5%;
-    max-width: 520px;
-    max-height: 366px;
+    max-width: 1280px;
+    max-height: 980px;
     float: left;
 }
+
+/*.container-image {*/
+    /*position: relative;*/
+    /*margin: 2% 5% 2% 2%;*/
+    /*width: 40%;*/
+    /*height: 87.5%;*/
+    /*max-width: 520px;*/
+    /*max-height: 366px;*/
+    /*float: left;*/
+/*}*/
 
 .new-comment {
     display: table;
