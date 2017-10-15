@@ -14,9 +14,9 @@ function myFunction() {
                     '<div class="modal-body">' +
                         '<p>You\'ve earned 1 coin!!!</p>' +
                     '</div>' +
-                '<div class="modal-footer">' +
-                '   <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> +
-                '</div>' +
+                    '<div class="modal-footer">' +
+                    '   <button type="button" class="btn btn-default" data-dismiss="modal" onClick="window.location.reload();" >Close</button>' +
+                    '</div>' +
                 '</div>' +
             '</div>' +
         '</div>';
